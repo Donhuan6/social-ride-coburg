@@ -1,0 +1,30 @@
+# Node
+node_modules/
+
+# Build output
+dist/
+build/
+.out/
+.vite/
+
+# Env
+.env
+.env.local
+.env.*.local
+
+# Vercel / caches
+.vercel/
+.cache/
+.idea/
+.vscode/
+
+# System
+.DS_Store
+coverage/
+
+# Local IDE
+.vscode/
+
+# Logs
+npm-debug.log*
+yarn-error.log*
