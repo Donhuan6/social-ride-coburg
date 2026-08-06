@@ -1,5 +1,0 @@
-# Backup of social-ride-coburg_1 before deletion
-
-This directory contains a backup snapshot of the nested `social-ride-coburg` folder that was present in `social-ride-coburg_1` prior to its removal in the cleanup PR.
-
-It is safe to remove this file after you have reviewed the backup in the PR.
