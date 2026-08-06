@@ -1,41 +1,51 @@
-# Social Ride Coburg
+# Social Ride Coburg – Web App
 
-Dies ist die Single-Page-Webanwendung für Social Ride Coburg (Vite + React + TypeScript).
+Live: https://social-ride-coburg.com
 
-Kurz: Diese Änderung bereinigt das Repository, konsolidiert die Konfiguration und fügt eine Basis‑Dokumentation hinzu.
+Stack
+- React 19 (genau 19.1.1)
+- TypeScript
+- Vite
+- Tailwind CSS 4
+- Framer Motion
+- Leaflet
+- Supabase
 
-Wichtigste Schritte zum lokalen Starten
+Lokales Starten
+1. Node 20+ installieren
+2. npm ci
+3. npm run dev (läuft standardmäßig auf Port 5173)
 
-1. Node (empfohlen) 18+ installieren.
-2. Abhängigkeiten installieren:
+Weitere Befehle
+- npm run build
+- npm run preview
+- npm run lint
 
-```bash
-npm install
-```
+Environment-Variablen
+- VITE_SUPABASE_URL
+- VITE_SUPABASE_ANON_KEY
+(Die Datei `src/lib/supabase.ts` enthält Fallback-Werte. Der Service-Role-Key darf niemals ins Frontend oder ins Repo.)
 
-3. Environment‑Variablen (Beispiel): Erstelle eine `.env` oder setze Variablen in Vercel.
+Projektstruktur (Wurzelverzeichnis)
+- index.html
+- vite.config.ts
+- tsconfig.json / tsconfig.app.json / tsconfig.node.json
+- vercel.json
+- package.json / package-lock.json
+- public/
+- src/
+  - components/
+  - context/
+  - lib/
+  - pages/
 
-```
-SUPABASE_URL=
-SUPABASE_ANON_KEY=
-```
+Deployment
+- Plattform: Vercel
+- Jeder Push auf main baut automatisch
+- Root Directory muss leer sein (Framework Preset: Vite)
 
-4. Entwicklung starten:
-
-```bash
-npm run dev
-```
-
-5. Build:
-
-```bash
-npm run build
-npm run preview
-```
-
-Weitere Hinweise
-
-- Die endgültige Vercel‑Konfiguration liegt in `vercel.json` im Root des Repositories.
-- Im Repo wurden mehrere Kopien/Uploads (z. B. `social-ride-coburg_1/` und `website-zum-hochladen_8/`) gefunden. In diesem Branch habe ich Markierungsdateien angelegt, die erklären, dass diese Ordner Duplikate sind. Nach Review kannst du diese Ordner vollständig entfernen (empfohlen).
-
-Wenn du möchtest, kann ich die Duplikate komplett entfernen — bestätige kurz, dann lösche ich sie in einem separaten Commit.
+Bekannte Eigenheiten
+- React ist absichtlich auf 19.1.1 festgenagelt (19.2.x enthält eine Regression).
+- StrictMode ist deaktiviert.
+- In App.tsx gibt ein useEffect bewusst nichts zurück, um Probleme mit Browser-Extensions (z. B. überschriebenes window.scrollTo → "destroy is not a function") zu vermeiden.
+- dist/ gehört nicht ins Repository (ein eingecheckter Build verfälscht die Klassen-Erkennung von Tailwind 4).
