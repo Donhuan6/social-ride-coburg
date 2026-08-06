@@ -1,0 +1,5 @@
+# Backup of website-zum-hochladen_8 before deletion
+
+This directory contains a backup snapshot of the `website-zum-hochladen_8` folder prior to its removal in the cleanup PR.
+
+It is safe to remove this file after you have reviewed the backup in the PR.
