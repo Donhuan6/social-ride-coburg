@@ -1,3 +1,4 @@
 {
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+  "deprecated": true,
+  "note": "Diese vercel.json befindet sich in einem Duplikat-Ordner. Die aktive Vercel-Konfiguration befindet sich im Root (vercel.json). Entfernen Sie diesen Ordner, falls nicht mehr benötigt."
 }
